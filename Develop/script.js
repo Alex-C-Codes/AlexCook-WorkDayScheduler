@@ -158,7 +158,7 @@ function createWorkDayScheduler() {
                 + '</div>'
                 // creates save button column
                 + '<div class="column right" id="rightID'+i+'">' 
-                    + '<input class="saveBtn" type="submit" onclick="saveInput('+i+');">'
+                    + '<input class="saveBtn" value="Save" type="submit" onclick="saveInput('+i+');">'
                 + '</div>'
             + '</div><br>'
         );
