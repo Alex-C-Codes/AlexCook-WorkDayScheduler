@@ -46,6 +46,9 @@ function checkIfPastPresentOrFuture() {
         militaryArr.push(hoursArrMilitary);
         currentHourMilitary = convertToMilitaryTime(currentHour);
 
+        //console.log(hoursArrMilitary);
+        //console.log(currentHourMilitary);
+
         if (hoursArrMilitary > currentHourMilitary) {
             dynamicBackgroundClassArr.push('future');
         } else if (hoursArrMilitary < currentHourMilitary) {
@@ -63,9 +66,12 @@ function updateBackgroundClass(elementID, elementClass, columnPlacement) {
 
 function convertToMilitaryTime(hour) {
     hour = hour.toUpperCase();
+    //console.log(hour);
     let militaryTime;
-    if (hour == '12 PM') { //this is midnight
-        militaryTime = +'12';
+    if (hour == '12 AM') { //this is midnight
+        let militaryTimeArr = hour.split(" ");
+        //militaryTime = +militaryTimeArr[0] + 12;
+        militaryTime = 0;
     } else if (hour[2] == 'P' || hour[3] == 'P') {
         let militaryTimeArr = hour.split(" ");
         militaryTime = +militaryTimeArr[0] + 12;
@@ -73,6 +79,7 @@ function convertToMilitaryTime(hour) {
         let militaryTimeArr = hour.split(" ");
         militaryTime = +militaryTimeArr[0];
     }
+    //console.log(militaryTime);
     return militaryTime;
 }
 
